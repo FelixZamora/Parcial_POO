@@ -25,7 +25,7 @@ class Reporte:
                 tiposTransporte[2][1] += 1
                 continue
 
-        cantidadTransporte = "\nTipos de transporte \n" + str(tiposTransporte[0][0]) + ": " + str(tiposTransporte[0][1]) + "\n" + str(tiposTransporte[1][0]) + ": " + str(tiposTransporte[1][1]) + "\n" + str(tiposTransporte[2][0]) + ": " + str(tiposTransporte[2][1]) 
+        cantidadTransporte = "\nCuantos medios de transporte ingresaron: \n" + str(tiposTransporte[0][0]) + ": " + str(tiposTransporte[0][1]) + "\n" + str(tiposTransporte[1][0]) + ": " + str(tiposTransporte[1][1]) + "\n" + str(tiposTransporte[2][0]) + ": " + str(tiposTransporte[2][1]) 
         return cantidadTransporte
 
     def getIntegranteMasIngresos(self):
@@ -58,7 +58,19 @@ class Reporte:
             print("La lista está vacía.")
 
     def getTotalPagosDia(self):
-        pass
+        listaPagos = 0
+
+        for x in self.__informacionIntegrante:
+            datos = x.getRegistrarSalida()
+            listaPagos += (datos[8])
+        
+        print ("\nEl total de pago realizados fueron: " , listaPagos)
 
     def getTotalPagosMes(self):
-        pass
+        listaPagos = 0
+
+        for x in self.__informacionIntegrante:
+            datos = x.getRegistrarSalida()
+            listaPagos += (datos[8])
+        
+        print ("\nEl total de pago realizados fueron: " , listaPagos)
